@@ -9,7 +9,6 @@ sysconfdir = /etc
 
 all:
 
-.PHONY: install
 install: xbacklight xbacklight.1 90-backlight.rules
 	$(NORMAL_INSTALL)
 	install -vCDt $(DESTDIR)$(bindir) xbacklight
@@ -18,8 +17,9 @@ install: xbacklight xbacklight.1 90-backlight.rules
 	$(POST_INSTALL)
 	udevadm trigger -s backlight -c add
 
-.PHONY: uninstall
 uninstall:
 	rm -f $(DESTDIR)$(bindir)/xbacklight
 	rm -f $(DESTDIR)$(man1dir)/xbacklight.1
 	rm -f $(DESTDIR)$(sysconfdir)/udev/rules.d/90-backlight.rules
+
+.PHONY: install uninstall all
