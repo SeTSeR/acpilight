@@ -1,4 +1,4 @@
-prefix = /usr
+prefix ?= /usr
 datarootdir = $(prefix)/share
 datadir = $(datarootdir)
 exec_prefix = $(prefix)
