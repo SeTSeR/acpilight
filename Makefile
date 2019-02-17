@@ -7,6 +7,8 @@ mandir = $(datarootdir)/man
 man1dir = $(mandir)/man1
 sysconfdir = /etc
 
+all:
+
 .PHONY: install
 install: xbacklight xbacklight.1 90-backlight.rules
 	$(NORMAL_INSTALL)
